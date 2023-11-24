@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /az1
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-world-service-az1
+                port:
+                  number: 80
+          - path: /az2
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-world-service-az2
+                port:
+                  number: 80
+          - path: /az3
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-world-service-az3
+                port:
+                  number: 80
